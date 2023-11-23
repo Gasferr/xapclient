@@ -35,6 +35,8 @@ namespace Config {
         float ZoomDistance = 200;
         float PitchPower = 1;
         float YawPower = 1;
+        float ExtraSmooth = 250;
+        bool WinScope = true;
     };
 
     namespace Sense {
@@ -72,6 +74,9 @@ void UpdateConfig() {
         WritePair(Aimbot, RecoilControl);
         WritePair(Aimbot, PitchPower);
         WritePair(Aimbot, YawPower);
+        WritePair(Aimbot, ExtraSmooth);
+        WritePair(Aimbot, WinScope);
+
         WriteSectionEnd();
 
         WriteSection(Sense);
@@ -128,6 +133,8 @@ bool ReadConfig(const std::string &configFile) {
     ReadBool(Aimbot, RecoilControl);
     ReadFloat(Aimbot, PitchPower);
     ReadFloat(Aimbot, YawPower);
+    ReadFloat(Aimbot, ExtraSmooth);
+    ReadBool(Aimbot, WinScope);
 
     UpdateConfig();
     return true;

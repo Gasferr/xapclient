@@ -115,6 +115,8 @@ void LoadConfig() {
     AimAssist->RecoilEnabled = Config::Aimbot::RecoilControl;
     AimAssist->PitchPower = Config::Aimbot::PitchPower;
     AimAssist->YawPower = Config::Aimbot::YawPower;
+    AimAssist->ExtraSmooth = Config::Aimbot::ExtraSmooth;
+    AimAssist->WinScope = Config::Aimbot::WinScope;
 
     // ESP //
     ESP->GlowEnabled = Config::Sense::Enabled;
