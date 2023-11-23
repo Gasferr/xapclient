@@ -46,7 +46,7 @@ namespace Config {
         bool AimedAtOnly = false;
         float MaxDistance = 200;
         float SeerMaxDistance = 200;
-        bool ShowSpectators = true;
+        bool ShowSpectators = false;
         bool DrawFOVCircle = true;
         float GameFOV = 120;
     };

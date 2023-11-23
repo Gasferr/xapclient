@@ -48,7 +48,7 @@ struct Sense {
     float SeerMaxDistance = 200;
     float GameFOV = 120;
 
-    bool ShowSpectators = true;
+    bool ShowSpectators = false;
 
     bool Skin = false;
     
@@ -362,8 +362,6 @@ struct Sense {
             SetGlow(Target, 0, 0, 91);
         }
     }
-
-
         void SkinChange(){
         if(!level->IsPlayable) return;
         if(Myself->IsDead) return;
@@ -410,15 +408,14 @@ struct Sense {
         weaponSkinMap[91] = { 6 };    //WEAPON_KRABER
         weaponSkinMap[158] = { 3 };    //WEAPON_THROWING_KNIFE
         weaponSkinMap[212] = { 2 };    //WEAPON_THERMITE_GRENADE 
-
-        if (Skin)  {
+        if(Skin){
             int waponIndex = Memory::Read<int>(wep_entity + OFF_WEAPON_INDEX);
             if (weaponSkinMap.count(waponIndex) == 0) return;
             int skinID = weaponSkinMap[waponIndex][0];
             //printf("Weapon: %s Activated Skin ID: %d \n", WeaponName(waponIndex).c_str(), skinID);  
             Memory::Write<int>(Myself->BasePointer + OFF_SKIN, skinID+1);
             Memory::Write<int>(wep_entity + OFF_SKIN, skinID);
-            curTime = Memory::Read<float>(player->BasePointer + OFFSET_TIME_BASE);
-        }                    
+            curTime = Memory::Read<float>(player->BasePointer + OFFSET_TIME_BASE);            
+         }   
     }
 };
