@@ -26,6 +26,8 @@ struct LocalPlayer {
 
     float ZoomFOV;
     float TargetZoomFOV;
+    long WeaponEntity;
+
 
     float ViewYaw;
 
@@ -60,7 +62,6 @@ struct LocalPlayer {
             
             ZoomFOV = Memory::Read<float>(WeaponEntity + OFF_CURRENTZOOMFOV);
             TargetZoomFOV = Memory::Read<float>(WeaponEntity + OFF_TARGETZOOMFOV);
-            
             WeaponIndex = Memory::Read<int>(WeaponEntity + OFF_WEAPON_INDEX);
             WeaponProjectileSpeed = Memory::Read<float>(WeaponEntity + OFF_PROJECTILESPEED);
             WeaponProjectileScale = Memory::Read<float>(WeaponEntity + OFF_PROJECTILESCALE);

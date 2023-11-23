@@ -47,6 +47,10 @@ constexpr long OFF_PROJECTILESPEED = 0x04dc + 0x19e0;         //projectile_launc
 constexpr long OFF_OFFHAND_WEAPON = 0x1974;                   //m_latestNonOffhandWeapons
 constexpr long OFF_CURRENTZOOMFOV = 0x1600 + 0x00b8;          //m_playerData + m_curZoomFOV
 constexpr long OFF_TARGETZOOMFOV = 0x1600 + 0x00bc;           //m_playerData + m_targetZoomFOV
+constexpr long OFFSET_TIME_BASE = 0x20b8;                     //m_currentFramePlayer.timeBase
+constexpr long OFF_SKIN = 0x0d88;                             // m_nSkin
+
+
 
 // Glow
 constexpr long OFF_GLOW_ENABLE = 0x294;                       //Script_Highlight_GetCurrentContext

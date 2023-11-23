@@ -85,6 +85,8 @@ namespace Memory {
         return false;
     }
 
+
+
     template <class T>
     T Read(long Address) {
         T buffer;
@@ -106,6 +108,14 @@ namespace Memory {
             throw std::invalid_argument(
                 "Failed to set " + std::to_string(sizeof(T)) + " at: " + std::to_string(Address));
         }
+    }
+
+     std::string ReadString(long address, int size) {
+        char buffer[size] = { 0 };
+        bool success = Read(address, &buffer, size);
+        if (!success)
+            throw std::invalid_argument("Failed to read String at address: " + address);
+        return std::string(buffer);
     }
 
     std::string ReadString(long address) {
